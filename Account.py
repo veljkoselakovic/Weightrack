@@ -199,6 +199,12 @@ class Account():
         context = ssl.create_default_context()
 
         strchk = get_random_string(randint(5, 10))
+        """
+        FOR THIS TO WORK YOU HAVE TO CREATE THE FILE IN conf/application.yml in this format:
+        user:
+            email: YOUR@MAIL.COM
+            password: YOURPASSWORD
+        """
         conf = yaml.safe_load(open('conf/application.yml'))
         senderemail = conf['user']['email']
         senderpwd = conf['user']['password']
